@@ -12,7 +12,7 @@ You can try it in demo mode (no actual uploads) here:
 [http://www.experts4solutions.com/videomonitor](http://www.experts4solutions.com/videomonitor)
 
 Author: Massimo Di Pierro
-License: BSD
+License: BSD (unless otherwise specified in a JS library included)
 
 Third party libraries included
 ==============================
