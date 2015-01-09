@@ -9,7 +9,7 @@ Uploaded videos are searchable by tags.
 
 You can try it in demo mode (no actual uploads) here:
 
-    [http://www.experts4solutions.com/videomonitor](http://www.experts4solutions.com/videomonitor)
+[http://www.experts4solutions.com/videomonitor](http://www.experts4solutions.com/videomonitor)
 
 Author: Massimo Di Pierro
 License: BSD
@@ -32,7 +32,7 @@ based on neural networks, has better search capabilities, two way vchat,
 email alerts, stores content in the could, has an API, and is FREE,
 we recommend you look into:
 
-    [http://camiocam.com](http://camiocam.com)
+[http://camiocam.com](http://camiocam.com)
 
 
 
