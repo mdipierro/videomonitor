@@ -18,7 +18,6 @@ def main():
 def upload():
     # do not try save session for speed
     session.forget()
-    return
     try:
         # retrieve the camera name from the POST
         camera = request.post_vars.camera
