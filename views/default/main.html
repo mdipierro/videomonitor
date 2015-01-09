@@ -1,0 +1,60 @@
+{{extend 'layout.html'}}
+
+<div id="loading">Loading...</div>
+
+<center>  
+  {{if not auth.user:}}<i>Attention, you are in DEMO MODE (video not uploaded)</i><hr/>{{pass}}
+  <video id="webcam-source" autoplay width="640" height="480" style="display:none"></video>
+  <div id="recorder" style="display:none">
+    <div class="camera hastip" title="Camera">
+      <canvas style="width:200px" id="canvas-source" width="640" height="480"></canvas>
+    </div>
+    <div class="camera hastip" title="Noise Accumulator">
+      <canvas style="width:200px" id="canvas-accumulator" width="640" height="480"></canvas>
+    </div>
+    <div class="camera hastip" title="Motion - Noise">
+      <canvas style="width:200px" id="canvas-blended" width="640" height="480"></canvas>
+    </div>
+  </div> 
+  
+  <div id="tags"></div>  
+  
+  <div class="input-append input-prepend">
+    <button class="btn" id="recorder-button">Start Recording</button>
+    <input class="span6 hastip" style="margin:0" id="filters" type="text" title=""/>
+    <button class="btn" id="filters-button">Filter Results</button>
+  </div>
+
+  <a id="prev">Previous</a>
+  <div id="target"></div>
+  <a id="next">Next</a>
+
+</center>
+
+<div class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="modal-title"></h3>
+  </div>
+  <div class="modal-body">
+    <center>
+      <video style="width:400px" id="tv-target" style="display:inline" controls></video>
+    </center>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
+{{block footer_js}}
+<script>window.have_user = {{='true' if auth.user else 'false'}};</script>
+<script src="{{=URL('static','js/sugar.min.js')}}"></script>
+<script src="{{=URL('static','js/RecordRTC.js')}}"></script>
+<script src="{{=URL('static','haar/objectdetect.js')}}"></script>
+<script src="{{=URL('static','haar/objectdetect.frontalface.js')}}"></script>
+<script src="{{=URL('static','haar/objectdetect.upperbody.js')}}"></script>
+<script src="{{=URL('static','haar/jquery.objectdetect.js')}}"></script>
+<script src="{{=URL('static','js/masonry.pkgd.min.js')}}"></script>
+<script src="{{=URL('static','js/main.js')}}"></script>
+{{end}}
+
