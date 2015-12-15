@@ -4,7 +4,7 @@
 
 <center>  
   {{if not auth.user:}}<i>Attention, you are in DEMO MODE (video not uploaded)</i><hr/>{{pass}}
-  <video id="webcam-source" autoplay width="640" height="480" style="display:none"></video>
+  <video id="webcam-source" muted width="640" height="480" style="display:none"></video>
   <div id="recorder" style="display:none">
     <div class="camera hastip" title="Camera">
       <canvas style="width:200px" id="canvas-source" width="640" height="480"></canvas>

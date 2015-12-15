@@ -97,17 +97,17 @@ var RecorderWidget = function(camera, do_upload) {
 	// mirror video
 	self.contextSource.translate(self.canvasSource.width, 0);
 	self.contextSource.scale(-1, 1);	
-	self.recorderButton.click(self.startVideoCapturing);	
+	self.recorderButton.click(self.toggleVideoCapturing);	
     };
 
     // connect the recording video stream
     self.connectStream = function(stream) {
 	self.recorderButton.attr('disabled',null);
-	window.audioVideoRecorder = window.RecordRTC(stream, { type: 'video' });
+	window.audioVideoRecorder = window.RecordRTC(stream);
     };
 
     // starts image capturing and toggles the recorder div
-    self.startVideoCapturing = function() {
+    self.toggleVideoCapturing = function() {
 	self.videoCapturing = !self.videoCapturing;
 	if(self.videoCapturing) {
 	    self.update();		
